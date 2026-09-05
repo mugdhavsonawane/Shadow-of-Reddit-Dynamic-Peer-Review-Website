@@ -1,0 +1,323 @@
+/* 
+The one style sheet for Quotations 1
+
+Author: Mugdha Sonawane
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+
+
+:root {
+	/* Main page */
+	--bg: #2f0f13;
+
+	/* Light content color */
+	--surface: #f6c2a7;
+	--surface-hover: #f9ccb5;
+
+	/* Text */
+	--text-dark: #101522;
+	--text-light: #fff7f3;
+
+	/* Borders */
+	--border: rgba(16, 21, 34, 0.16);
+
+	/* Shadow */
+	--shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+
+	--font: "Space Grotesk", system-ui, -apple-system, "Segoe UI",
+		Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+
+html {
+	min-height: 100%;
+}
+
+
+body {
+	min-height: 100vh;
+
+	margin: 0;
+	padding: 50px 24px;
+
+	background: var(--bg);
+
+	color: var(--text-light);
+
+	font-family: var(--font);
+	text-align: center;
+}
+
+
+/* ------------------------------
+	 HEADINGS
+-------------------------------- */
+
+h1 {
+	margin: 20px 0 12px;
+
+	color: var(--text-light);
+
+	font-size: clamp(3rem, 7vw, 5.5rem);
+	font-weight: 800;
+	letter-spacing: -2px;
+}
+
+
+h2 {
+	margin: 15px 0 25px;
+
+	color: var(--text-light);
+
+	font-size: clamp(1.4rem, 3vw, 2rem);
+	font-weight: 700;
+}
+
+
+/* ------------------------------
+	 LINKS
+-------------------------------- */
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+
+/* ------------------------------
+	 BUTTONS
+-------------------------------- */
+
+button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	min-height: 46px;
+
+	padding: 11px 20px;
+	margin: 7px;
+
+	background: var(--surface);
+	color: var(--text-dark);
+
+	border: 1px solid var(--border);
+	border-radius: 999px;
+
+	font-family: var(--font);
+	font-size: 1rem;
+	font-weight: 800;
+	letter-spacing: 0.1px;
+
+	cursor: pointer;
+
+	transition:
+		transform 140ms ease,
+		box-shadow 140ms ease,
+		background 140ms ease;
+}
+
+
+button:hover {
+	background: var(--surface-hover);
+
+	transform: translateY(-2px);
+
+	box-shadow: var(--shadow);
+}
+
+
+button:active {
+	transform: translateY(0);
+
+	box-shadow: none;
+}
+
+
+/* ------------------------------
+	 QUOTE CARDS
+-------------------------------- */
+
+.container {
+	width: min(760px, 95%);
+
+	margin: 18px auto;
+	padding: 22px 26px;
+
+	background: var(--surface);
+	color: var(--text-dark);
+
+	border: 1px solid var(--border);
+	border-radius: 18px;
+
+	font-size: 1rem;
+
+	box-shadow: var(--shadow);
+
+	text-align: left;
+}
+
+
+/* Quote author */
+
+.author {
+	margin-top: 12px;
+
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.username {
+	color: #fcba03;
+}
+
+/* ------------------------------
+	 FORMS
+-------------------------------- */
+
+.containerAdd,
+.containerReg {
+	width: min(460px, 92%);
+
+	margin: 30px auto;
+	padding: 28px;
+
+	background: var(--surface);
+	color: var(--text-dark);
+
+	border: 1px solid var(--border);
+	border-radius: 20px;
+
+	box-shadow: var(--shadow);
+
+	font-size: 1rem;
+}
+
+
+/* ------------------------------
+	 INPUTS
+-------------------------------- */
+
+input,
+textarea,
+select {
+	width: 100%;
+
+	margin: 8px 0 16px;
+	padding: 12px 14px;
+
+	background: #fffaf7;
+	color: var(--text-dark);
+
+	border: 1px solid rgba(16, 21, 34, 0.22);
+	border-radius: 12px;
+
+	font-family: var(--font);
+	font-size: 1rem;
+
+	outline: none;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+	border-color: #7d5056;
+
+	box-shadow: 0 0 0 3px rgba(47, 15, 19, 0.12);
+}
+
+
+textarea {
+	min-height: 120px;
+	resize: vertical;
+}
+
+
+/* Existing quote textarea class */
+
+.quote {
+	width: 100%;
+	min-height: 120px;
+}
+
+
+/* ------------------------------
+	 QUOTES AREA
+-------------------------------- */
+
+#quotes {
+	width: 100%;
+	max-width: 900px;
+
+	margin: 35px auto 0;
+}
+
+
+/* ------------------------------
+	 DIVIDER
+-------------------------------- */
+
+hr {
+	width: min(1000px, 95%);
+
+	margin: 28px auto;
+
+	border: 0;
+	border-top: 1px solid rgba(255, 247, 243, 0.35);
+}
+
+
+/* ------------------------------
+	 MOBILE
+-------------------------------- */
+
+@media (max-width: 600px) {
+
+	body {
+		padding: 30px 14px;
+	}
+
+	h1 {
+		letter-spacing: -1px;
+	}
+
+	button {
+		padding: 10px 16px;
+	}
+
+	.container,
+	.containerAdd,
+	.containerReg {
+		width: 100%;
+		padding: 20px;
+	}
+
+}
+
+/* ------------------------------
+	 FOOTER / SIGNATURE
+-------------------------------- */
+
+.site-footer {
+	position: fixed;
+	left: 20px;
+	bottom: 15px;
+
+	color: rgba(255, 247, 243, 0.7);
+
+	font-size: 0.9rem;
+	font-weight: 500;
+
+	text-align: left;
+}
+
+.site-footer p {
+	margin: 0;
+}
